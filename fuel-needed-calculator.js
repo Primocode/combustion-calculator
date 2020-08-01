@@ -9,20 +9,20 @@ const changeofCalculator = () => {
     })
     if (document.querySelector('.calculator-needed-fuel-and-prices').checked) {
         calculatorTitle.textContent = "Kalkulator potrzebnego paliwa";
-        calculatorP.textContent = "Kalkulator pozwala na obliczenie zużycia paliwa oraz ceny na podstawie podanych informacji";
+        calculatorP.textContent = "Kalkulator umożliwia obliczenie zużycia paliwa oraz ceny na podstawie podanych informacji";
         document.querySelector('.calculator-amount-of-fuel').style.display = "none";
         document.querySelector('.calculator-supplement-amount-of-fuel').style.display = "none";
 
     }
     if (document.querySelector('.average-fuel-consumption-calculator').checked) {
         calculatorTitle.textContent = "Kalkulator średniego spalania";
-        calculatorP.textContent = "Kalkulator pozwala na obliczenie średniego spalania samochodu na podstawie spalonego paliwa na danym dystansie";
+        calculatorP.textContent = "Kalkulator umożliwia obliczenie średniego spalania samochodu na podstawie podanych informacji";
         document.querySelector('.container-average-fuel-consumption').style.display = "none";
         document.querySelector('.calculator-supplement-avg-fuel-consumption').style.display = "none";
     }
     if (document.querySelector('.distance-calculator').checked) {
         calculatorTitle.textContent = "Kalkulator dystansu";
-        calculatorP.textContent = "Kalkulator liczy dystans jaki przejedziesz posiadając daną ilość paliwa, oraz obliczy koszt tej podróży";
+        calculatorP.textContent = "Kalkulator umożliwia obliczenie dystansu jaki przejedziesz posiadając daną ilośc poliwa, oraz obliczy koszt tej podróży";
         document.querySelector('.calculator-distance').style.display = "none";
         document.querySelector('.calculator-supplement-distance').style.display = "none";
     }
@@ -159,20 +159,18 @@ const clearingField = () => {
 const resultInf = document.querySelector('.main-result');
 const resultCost = document.querySelector('.the-cost-of-travel');
 const recordTheResult = (text, value, price) => {
-    if (value > 0) {
+    if (value > 0 & value < 90000000)  {
         resultInf.textContent = `${text}: ${value}`;
     }
     else {
         resultInf.textContent = ``;
     }
-
-    if (price > 0) { 
+    if (price > 0 & price < 90000000)  { 
         resultCost.textContent = `Koszt podróży ${price}`;
     }
     else {
-        resultCost.textContent = `Nie podano ceny`;
+        resultCost.textContent = ``;
     }
-
 }   
 
 const deleteResult = () => {
