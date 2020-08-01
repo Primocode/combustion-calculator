@@ -1,13 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kalkulator spalania paliwa</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f99c5d740e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <section class="wrapper">
+        <header>
+            <div class="header">
+                <nav>
+                    <ul>
+                        <li><a href="#">Strona główna</a></li>
+                        <li><a href="#">Kalkulator spalania</a></li>
+                        <li><a href="#">Zapis kosztów</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="header-top">
+                <h1>Kalkulator spalania paliwa</h1>
+            </div>
+            <div class="main-calculator">
+                <div class="selecting-a-calculator">
+                    <ul class="select-calculator">
+                        <h2>Wybierz kalkulator</h2>
+                        <li>
+                            <div class="select-container">
+                                <label class="calculator-label"><input type="radio" name="calculator-selection" class="input-calculator-selection calculator-needed-fuel-and-prices" checked>Kalkulator potrzebnego paliwa oraz ceny</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="select-container">
+                                <label class="calculator-label"><input type="radio" name="calculator-selection" class="input-calculator-selection average-fuel-consumption-calculator">Kalkulator średniego spalania</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="select-container">
+                                <label class="calculator-label"><input type="radio" name="calculator-selection" class="input-calculator-selection distance-calculator">Kalkulator dystansu</label>
+                            </div>              
+                        </li>
+                    </ul>
+                </div>
+                <div class="calculators-container">
+                    <div class="calculator">
+                        <div class="calculator-title">
+                            <h2 class="calculator-title-text">Kalkulator potrzebnego paliwa</h2>
+                            <p class="calculator-p">Kalkulator pozwala na obliczenie zużycia paliwa oraz ceny na podstawie podanych informacji</p>
+                        </div>
+                        <div class="calculator-content">
+                            <div class="calculator-top">
+                                <h3>Jednostka odległości</h3>
+                                <select class="unit-of-distance unit-of needed-fuel-calculator-distance">
+                                    <option value="Kilometry">Kilometry [ km ]</option>
+                                    <option value="Mile">Mile [ mi ]</option>
+                                </select>
+                                <h3>Jednostka paliwa</h3>
+                                <select class="unit-of-fuel unit-of needed-fuel-calculator-fuel">
+                                    <option value="Litr">Litry [ L ]</option>
+                                    <option value="Galon angielski">Galon angielski [ Gal ang ]</option>
+                                    <option value="Galon amerykański">Galon amerykański [ Gal am ]</option>
+                                </select>
+                            </div>
+                            <div class="sep"></div>
+                            <div class="calculator-bottom">
+                                <div class="calculator-bottom-distance calculator-container calculator-distance">
+                                    <input type="number" class="calculator-bottom-distance-input calculator-input distance-name" placeholder="Wpisz odległość ">
+                                    <div class="distance-type calculator-input-type"><p class="needed-fuel-calculator-mi-km">Kilometry</p></div>
+                                </div>
+                                <div class="calculator-bottom-distance calculator-container average-burning-quantity-container container-average-fuel-consumption">
+                                    <input type="number" class="calculator-bottom-distance-input calculator-input average-burning-quantity" placeholder="Wpisz średnie spalanie">
+                                    <div class="fuel-type-avg-fuel-consumption">
+                                        <p class="fuel-type-avg-fuel-consumption-value">L</p>
+                                    </div>
+                                    <div class="average-fuel-consumption">
+                                        <p>na</p>
+                                        <div class="average-fuel-consumption avg-fuel-style">
+                                            <input type="number" class="calculator-bottom-fuel-input calculator-input calculator-input at-what-distance" value="100" placeholder="100">
+                                            <div class="type-of-distance-unit"><p class="average-fuel-consumption-unit">km</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calculator-bottom-fuel calculator-container calculator-price">
+                                    <input type="number" class="calculator-bottom-fuel-input calculator-input fuel-price " placeholder="Wpisz cenę za">
+                                    <div class="fuel-type calculator-input-type"><p class="needed-fuel-calculator-fuel-name">Litr</p></div>
+                                </div>
+                                <div class="amount-of-fuel calculator-container calculator-amount-of-fuel" style="display: none">
+                                    <input type="number" class="calculator-bottom-fuel-input calculator-input amount-of-fuel-number" placeholder="Wpisz ilość paliwa">
+                                    <div class="fuel-type calculator-input-type"><p class="amount-of-fuel-name">Litr</p></div>
+                                </div>
+                            </div>
+                            <div class="calculator-supplement">
+                                <h3>Uzupełnienie wartości</h3>
+                                <div class="calculator-supplement-container calculator-supplement-distance">
+                                    <p>Dystans</p><span class="fas fa-times-circle" id="calculator-supplement-distance-icon"></span>
+                                </div>
+                                <div class="calculator-supplement-container calculator-supplement-avg-fuel-consumption">
+                                    <p>Średnie spalanie</p><span class="fas fa-times-circle" id="calculator-supplement-avg-fuel-consumption-icon"></span>
+                                </div>
+                                <div class="calculator-supplement-container calculator-supplement-price">
+                                    <p>Cena</p><span class="fas fa-times-circle" id="calculator-supplement-price-icon"></span>
+                                </div>
+                                <div class="calculator-supplement-container calculator-supplement-amount-of-fuel" style="display: none;">
+                                    <p>Ilość paliwa</p><span class="fas fa-times-circle" id="calculator-supplement-amount-of-fuel-icon"></span>
+                                </div>
+                            </div>
+                            <div class="calculator-result">
+                                <p class="fuel-needed calculator-result-style main-result"></p>
+                                <p class="the-cost-of-travel calculator-result-style the-cost-of-travel"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+    <script src="fuel-needed-calculator.js"></script>
 </body>
 </html>
