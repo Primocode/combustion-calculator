@@ -73,6 +73,7 @@ main {
 @media (max-width: 475px) {
   .selecting-a-calculator .select-calculator .select-container label {
     font-size: 16px;
+    width: 250px;
   }
 }
 
