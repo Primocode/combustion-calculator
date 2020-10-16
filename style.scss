@@ -9,26 +9,12 @@
 }
 
 body {
-    background: linear-gradient(to bottom right, #517fd67d 0%, #2b3f653b 100%) 100% no-repeat;
+    background-color: #f9f9f9;
     height: 100%;
-    height: 150vh;
 }
 
 main {
     width: 100%;
-    .header-top {
-        background-color: #2B3F65;
-        height: 70px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        h1 {
-            color: #EBEBEB;
-            font-size: 23px;
-            margin-left: 20px;
-        }
-    }
 }
 
 .main-calculator {
@@ -39,26 +25,24 @@ main {
 }
 
 .selecting-a-calculator {
-    margin: 30px 5px 30px 5px;
-    background-color: white;
-    padding: 25px;
+    margin: 10px 5px 10px 5px;
     z-index: 5;
     border-radius: 5px;
     .select-calculator {
         list-style-type: none;
-        h2 {
-            font-size: 25px;
-            color: #476282;
-            margin-bottom: 10px;
-        }
         .select-container {
+            margin: 5px;
+            border: 1px solid #4762820d;
+            border-radius: 5px;
+            background-color: white;
             label {
                 cursor: pointer;
                 font-size: 20px;
                 color: #476282;
                 display: flex;
+                padding: 15px;
                 align-items: center;
-                margin: 5px 0px 5px 0px;
+                width: 310px;
             }
             label:hover {
                 color: #2f73c7;
@@ -85,8 +69,8 @@ main {
     border-top-left-radius: 61px;
     border-top-right-radius: 61px;
     border-top-right-radius: 63px;
-    border-radius: 5px;
-    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+    box-shadow: 0px 0px 9px 0px #ececec;
     .calculator-content {
         margin-top: 10px;
     }
@@ -111,8 +95,7 @@ main {
     }
     .unit-of {
         margin-top: 5px;
-        background-color: #F8F8F8;
-        border: none;
+        border: 1px solid #eaeaea;
         color: #636363;
         width: 100%;
         padding: 10px 0px 10px 10px;
@@ -133,12 +116,12 @@ main {
     display: flex;
     .calculator-input {
         width: 100%;
-        background-color: #F8F8F8;
         border: none;
         padding: 10px 0px 10px 10px;
         font-size: 16px;
         text-align: center;
         color: #636363;
+        border: 1px solid #eaeaea;
         min-width: 42px;
     }
     .calculator-input-type {
@@ -146,18 +129,21 @@ main {
         display: flex;
         align-items: center;
         background-color: #F8F8F8;
-        border-left: 1px solid #476282;
+        border: 1px solid #F8F8F8;
         width: 100%;
         justify-content: center;
         p {
             color: #476282;
         }
     }
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 }
 
 .fuel-type-avg-fuel-consumption {
     color: #476282;
-    border-left: 1px solid #476282;
     background-color: #F8F8F8;
     display: flex;
     -webkit-box-align: center;
@@ -183,10 +169,10 @@ main {
     .avg-fuel-style {
         .type-of-distance-unit {
             color: #476282;
-            border-left: 1px solid #476282;
             background-color: #F8F8F8;
             display: flex;
             align-items: center;
+            border: 1px solid #F8F8F8;
         }
     }
 }
