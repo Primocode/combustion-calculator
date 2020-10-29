@@ -28,3 +28,5 @@ Głównym celem aplikacji było proste liczenie wszystkiego co potrzebne dla kie
 
 ## Live 
 https://primocode.github.io/combustion-calculator/
+
+![image](https://github.com/Primocode/combustion-calculator/blob/master/kalkulator-spalania-paliwa.png)
